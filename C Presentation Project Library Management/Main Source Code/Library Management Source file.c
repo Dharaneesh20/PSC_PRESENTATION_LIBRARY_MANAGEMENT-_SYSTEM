@@ -186,7 +186,7 @@ int main() {
         scanf("%d", &choice);
     } while (choice != 0);//LOOP UNTILL EXIT
 
-    return 0;
+    return 0; // exiting the function
 }
 
 int addStudent(int id, char name[])                                          //FUNCTION SIGNATURE 
@@ -203,7 +203,7 @@ int addStudent(int id, char name[])                                          //F
         printf("Student limit reached!\n");
     }
 
-    return 0;
+    return 0;    //exiting the function
 }
 
 int addBook(int id, char title[], int due_date)                              //Function Signature 
@@ -221,7 +221,7 @@ int addBook(int id, char title[], int due_date)                              //F
         printf("Book limit reached!\n");
     }
 
-    return 0;
+    return 0;// exiting the function
 }
 
 int borrowBook(int student_id, int book_id, int borrow_date)                 //FUNCTION SIGNATURE      
@@ -240,7 +240,7 @@ int borrowBook(int student_id, int book_id, int borrow_date)                 //F
         printf("Borrow record limit reached!\n");                            //HANDLING OVERFLOW
     }
 
-    return 0;
+    return 0;  // exting the function 
 }
 
 int returnBook(int student_id, int book_id, int return_date)                 //FUNCTION SIGNATURE
@@ -256,7 +256,7 @@ int returnBook(int student_id, int book_id, int return_date)                 //F
 		{
             records[i].return_date = return_date;                             //Update the Return Date
             int late_days = return_date - books[i].due_date;                  //Calculate Late Fees
-            int late_fees = (late_days > 0) ? late_days * 10 : 0;
+            int late_fees = (late_days > 0) ? late_days * 10 : 0;             // after calculate fees
             printf("Book returned successfully!\n");                          //PRINT SUCCESS MESSAGE
             printf("Late fees: %d units(100 units = 1 rupees)\n", late_fees);
             printf("\nIn Rupees : %d\n",late_fees/100);
@@ -308,11 +308,11 @@ int modifyBookName(int id, char new_title[])                                  //
                                                                                 books[i].id == id checks if the current book ID matches the provided id.
                                                                                 If a match is found, the book title is updated with new_title using strcpy().*/
             printf("Book title modified successfully!\n");
-            return 0;                                                         //SUCESS
+            return 0; //terminating                                                        //SUCESS
         }
     }
     printf("Book with ID %d not found!\n", id);                               //BOOK NOT FOUND MESSAGE 
-    return -1;                                                                //NOT FOUND 
+    return -1;    //terminating                                                            //NOT FOUND 
 }
 
 int removeBook(int id)                                                        //FUNCTION SIGNATURE
